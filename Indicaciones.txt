@@ -1,0 +1,37 @@
+# Taller de Tesis I – Clustering de Ciudades por Clima y Calidad del Aire (2024)
+
+Este repositorio contiene el código y los datos necesarios para reproducir el estudio de agrupamiento de 5 115 ciudades sudamericanas según sus perfiles ambientales (clima + contaminación) durante 2024.
+
+## 1. Estructura del proyecto
+
+├── data/  
+│   ├── raw/                – Descargas originales (solo si ejecutas la extracción)  
+│   ├── processed/          – Datos procesados listos para análisis  
+│   │   └── aire_clima_2024_final.csv  – Dataset integrado (≈ 60 MB)  
+│   └── ubicaciones.csv     – Lat, lon y país de todas las ciudades  
+├── notebooks/  
+│   ├── 01_extraccion_datos.ipynb  
+│   ├── 02_pca.ipynb  
+│   └── 03_clustering.ipynb  
+├── src/                    – Funciones auxiliares  
+├── outputs/                – Figuras, tablas y modelos  
+└── README.md  
+
+## 2. Requisitos
+
+* Python ≥ 3.10 (se recomienda usar conda o venv)  
+* Paquetes indicados en `environment.yml` o `requirements.txt`  
+* (Opcional) Llaves de API si deseas hacer la **extracción completa**.
+
+```bash
+conda env create -f environment.yml
+conda activate tesis_cluster_ciudades
+
+## Ruta rápida (saltarse la extracción)
+Asegúrate de que data/processed/aire_clima_2024_final.csv (o .xlsx) esté presente.
+
+Abre, modifica las rutas a ese archivo y ejecuta los notebooks:
+
+02_pca.ipynb
+
+03_clustering.ipynb
